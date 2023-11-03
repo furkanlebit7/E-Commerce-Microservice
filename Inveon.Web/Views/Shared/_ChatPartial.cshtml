@@ -1,0 +1,47 @@
+﻿﻿@if (User.Identity.IsAuthenticated)
+{
+
+    <!-- chat button -->
+    <span class="chat-button" id="chat_button">
+        <!-- <span class="red-dot"></span> -->
+        <i class="fa-solid fa-message fa-lg"></i>
+    </span>
+
+    <!-- chat box -->
+    <div class="chat-box d-none" id="chat_box">
+        <!-- chat header -->
+        <div class="chat-header">
+            <span id="user_identity">@User.Identity.Name</span>
+            <button class="close-chat" id="close_chat"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <hr class="hr">
+        <!-- chat content -->
+        <div>
+            <div class="chat-content" id="chat_content">
+                <!-- messages here -->
+
+                <!-- messages admin -->
+                @* <div class="message right">
+                    <span class="message-text">Hello</span>
+                </div>
+                <!-- messages customer -->
+                <div class="message left">
+                    <span class="message-text">How are you?</span>
+                </div> *@
+            </div>
+        </div>
+        <hr class="hr">
+        <!-- chat footer -->
+        <div class="chat-footer">
+            <div class="chat-form">
+                <input type="text" id="message_input" class="chat-input" placeholder="Type a message...">
+                <button class="chat-send" onclick="sendMessage('@User.Identity.Name')" id="chat_send" type="submit">Send</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chat.js"></script>
+
+}

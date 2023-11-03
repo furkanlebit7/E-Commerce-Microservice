@@ -1,0 +1,181 @@
+﻿.chat-button {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: gray;
+    background-color: rgb(241, 241, 241);
+    cursor: pointer;
+}
+
+    .chat-button:hover {
+        bottom: 55px;
+    }
+
+.red-dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.chat-box {
+    background-color: white;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    border: 1px solid rgb(235, 233, 233);
+    border-top: 4px solid orange;
+    z-index: 10;
+    border-radius: 4px;
+    width: 330px;
+    padding: 2px;
+}
+
+.chat-header {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .chat-header span {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+.close-chat {
+    background-color: transparent;
+    border: none;
+}
+
+    .close-chat:hover {
+        color: red;
+    }
+
+hr {
+    margin: 0px;
+    color: rgb(173, 173, 173);
+}
+
+.chat-content {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+}
+
+    .message-container.left .message {
+        align-self: flex-start;
+        background-color: #d2d6de;
+        margin-right: 50px;
+        position: relative;
+    }
+
+    .message-container.right .message {
+        background-color: orange;
+        align-self: self-end;
+        margin-left: 50px;
+        position: relative;
+    }
+
+.message-time {
+    font-size: 12px;
+}
+
+.message-container.left .message-time {
+    align-self: flex-start;
+    margin-left: 10px;
+}
+
+.message-container.right .message-time {
+    align-self: flex-end;
+    margin-right: 10px;
+}
+
+.message {
+    padding: 5px 10px;
+    margin-bottom:10px;
+    border-radius: 5px;
+    width: fit-content;
+    z-index: 2;
+    max-width: 250px;
+}
+
+.message-text {
+    word-wrap: break-word;
+}
+
+.message.right::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 30px;
+    border-radius: 50%;
+    height: 10px;
+    background-color: orange;
+    right: -5px;
+}
+
+.message.left::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 30px;
+    border-radius: 50%;
+    height: 10px;
+    background-color: #d2d6de;
+    left: -5px;
+}
+
+.chat-footer {
+    padding: 6px;
+    background-color: white;
+}
+
+.chat-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid gainsboro;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+    .chat-form input {
+        width: 100%;
+        border: none;
+        outline: none;
+    }
+
+        .chat-form input:focus {
+            outline: none;
+        }
+
+.chat-send {
+    border: none;
+    padding: 8px 15px;
+    background-color: orange;
+    color: white;
+}
+
+.chat-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-content::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;
+}
