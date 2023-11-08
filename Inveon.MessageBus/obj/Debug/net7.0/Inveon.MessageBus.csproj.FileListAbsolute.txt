@@ -1,0 +1,11 @@
+D:\inveonProjects\MicroserviceInveonOrnek\Inveon.MessageBus\bin\Debug\net7.0\Inveon.MessageBus.deps.json
+D:\inveonProjects\MicroserviceInveonOrnek\Inveon.MessageBus\bin\Debug\net7.0\Inveon.MessageBus.dll
+D:\inveonProjects\MicroserviceInveonOrnek\Inveon.MessageBus\bin\Debug\net7.0\Inveon.MessageBus.pdb
+D:\inveonProjects\MicroserviceInveonOrnek\Inveon.MessageBus\obj\Debug\net7.0\Inveon.MessageBus.GeneratedMSBuildEditorConfig.editorconfig
+D:\inveonProjects\MicroserviceInveonOrnek\Inveon.MessageBus\obj\Debug\net7.0\Inveon.MessageBus.AssemblyInfoInputs.cache
+D:\inveonProjects\MicroserviceInveonOrnek\Inveon.MessageBus\obj\Debug\net7.0\Inveon.MessageBus.AssemblyInfo.cs
+D:\inveonProjects\MicroserviceInveonOrnek\Inveon.MessageBus\obj\Debug\net7.0\Inveon.MessageBus.csproj.CoreCompileInputs.cache
+D:\inveonProjects\MicroserviceInveonOrnek\Inveon.MessageBus\obj\Debug\net7.0\Inveon.MessageBus.dll
+D:\inveonProjects\MicroserviceInveonOrnek\Inveon.MessageBus\obj\Debug\net7.0\refint\Inveon.MessageBus.dll
+D:\inveonProjects\MicroserviceInveonOrnek\Inveon.MessageBus\obj\Debug\net7.0\Inveon.MessageBus.pdb
+D:\inveonProjects\MicroserviceInveonOrnek\Inveon.MessageBus\obj\Debug\net7.0\ref\Inveon.MessageBus.dll
