@@ -7,6 +7,7 @@ using Inveon.Services.ShoppingCartAPI.Messages;
 using Inveon.Services.ShoppingCartAPI.RabbitMQSender;
 using Inveon.Services.ShoppingCartAPI.Repository;
 using Inveon.Services.ShoppingCartAPI.Models.Dto;
+using System.Globalization;
 
 namespace Inveon.Service.ShoppingCartAPI.Controllers
 {
@@ -84,8 +85,8 @@ namespace Inveon.Service.ShoppingCartAPI.Controllers
 
             Options options = new Options();
 
-            options.ApiKey = "sandbox-8zkTEIzQ8rikWsvPkL76V8kAvo4DpYuz";
-            options.SecretKey = "sandbox-56FjiYYrjkAuSqENtt0k8b7Ei03s8X61";
+            options.ApiKey = "sandbox-cwh3m1x4CATOJvOU0EX1TJT9sNtc90DB";
+            options.SecretKey = "sandbox-cXRCSfTNizE0elDGWBdl9LKJ5tBA1jMP";
             options.BaseUrl = "https://sandbox-api.iyzipay.com";
 
             CreatePaymentRequest request = new CreatePaymentRequest();
@@ -146,35 +147,50 @@ namespace Inveon.Service.ShoppingCartAPI.Controllers
             request.BillingAddress = billingAddress;
 
             List<BasketItem> basketItems = new List<BasketItem>();
-            BasketItem firstBasketItem = new BasketItem();
-            firstBasketItem.Id = "BI101";
-            firstBasketItem.Name = "Binocular";
-            firstBasketItem.Category1 = "Collectibles";
-            firstBasketItem.Category2 = "Accessories";
-            firstBasketItem.ItemType = BasketItemType.PHYSICAL.ToString();
-            firstBasketItem.Price = "0.3";
-            basketItems.Add(firstBasketItem);
+            //BasketItem firstBasketItem = new BasketItem();
+            //firstBasketItem.Id = "BI101";
+            //firstBasketItem.Name = "Binocular";
+            //firstBasketItem.Category1 = "Collectibles";
+            //firstBasketItem.Category2 = "Accessories";
+            //firstBasketItem.ItemType = BasketItemType.PHYSICAL.ToString();
+            //firstBasketItem.Price = "0.3";
+            //basketItems.Add(firstBasketItem);
 
-            BasketItem secondBasketItem = new BasketItem();
-            secondBasketItem.Id = "BI102";
-            secondBasketItem.Name = "Game code";
-            secondBasketItem.Category1 = "Game";
-            secondBasketItem.Category2 = "Online Game Items";
-            secondBasketItem.ItemType = BasketItemType.VIRTUAL.ToString();
-            secondBasketItem.Price = "0.5";
-            basketItems.Add(secondBasketItem);
+            //BasketItem secondBasketItem = new BasketItem();
+            //secondBasketItem.Id = "BI102";
+            //secondBasketItem.Name = "Game code";
+            //secondBasketItem.Category1 = "Game";
+            //secondBasketItem.Category2 = "Online Game Items";
+            //secondBasketItem.ItemType = BasketItemType.VIRTUAL.ToString();
+            //secondBasketItem.Price = "0.5";
+            //basketItems.Add(secondBasketItem);
 
-            BasketItem thirdBasketItem = new BasketItem();
-            thirdBasketItem.Id = "BI103";
-            thirdBasketItem.Name = "Usb";
-            thirdBasketItem.Category1 = "Electronics";
-            thirdBasketItem.Category2 = "Usb / Cable";
-            thirdBasketItem.ItemType = BasketItemType.PHYSICAL.ToString();
-            thirdBasketItem.Price = "0.2";
-            basketItems.Add(thirdBasketItem);
+            //BasketItem thirdBasketItem = new BasketItem();
+            //thirdBasketItem.Id = "BI103";
+            //thirdBasketItem.Name = "Usb";
+            //thirdBasketItem.Category1 = "Electronics";
+            //thirdBasketItem.Category2 = "Usb / Cable";
+            //thirdBasketItem.ItemType = BasketItemType.PHYSICAL.ToString();
+            //thirdBasketItem.Price = "0.2";
+            //basketItems.Add(thirdBasketItem);
+            //request.BasketItems = basketItems;
+
+            foreach (var cartDetail in checkoutHeaderDto.CartDetails)
+            {
+                var product = cartDetail.Product;
+                BasketItem basketItem = new BasketItem();
+                basketItem.Id = "BI10" + product.ProductId.ToString();
+                basketItem.Name = product.Name;
+                basketItem.Category1 = product.CategoryName;
+                basketItem.Price = (product.Price * cartDetail.Count).ToString(CultureInfo.InvariantCulture);
+                basketItem.ItemType = BasketItemType.PHYSICAL.ToString();
+
+                basketItems.Add(basketItem);
+            }
+
+            request.Price = basketItems.Sum(x => Convert.ToDecimal(x.Price)).ToString();
             request.BasketItems = basketItems;
 
-            //Payment payment = Payment.Create(request, options);
 
             return Payment.Create(request, options);
         }

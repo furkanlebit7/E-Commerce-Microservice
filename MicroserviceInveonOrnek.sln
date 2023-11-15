@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inveon.Services.ShoppingCar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inveon.MessageBus", "Inveon.MessageBus\Inveon.MessageBus.csproj", "{EF595055-A264-43E1-B0D2-594F637EFFBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inveon.Services.CouponAPI", "Inveon.Services.CouponAPI\Inveon.Services.CouponAPI.csproj", "{1378C5EE-C6DF-4CC5-B0B0-482CB4B5F4C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inveon.Services.CouponAPI", "Inveon.Services.CouponAPI\Inveon.Services.CouponAPI.csproj", "{1378C5EE-C6DF-4CC5-B0B0-482CB4B5F4C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inveon.Services.Email", "Inveon.Services.Email\Inveon.Services.Email.csproj", "{42FAD78A-E07B-4CD1-BA88-DBEDB684F1E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{1378C5EE-C6DF-4CC5-B0B0-482CB4B5F4C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1378C5EE-C6DF-4CC5-B0B0-482CB4B5F4C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1378C5EE-C6DF-4CC5-B0B0-482CB4B5F4C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42FAD78A-E07B-4CD1-BA88-DBEDB684F1E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42FAD78A-E07B-4CD1-BA88-DBEDB684F1E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42FAD78A-E07B-4CD1-BA88-DBEDB684F1E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42FAD78A-E07B-4CD1-BA88-DBEDB684F1E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +77,7 @@ Global
 		{FBDAA38C-2959-4650-98F5-011F12292AE5} = {6597FF74-6EAB-4ECC-90E1-408D7D4126D4}
 		{EF595055-A264-43E1-B0D2-594F637EFFBA} = {855B954A-7B0A-4C6E-B58D-CF7B7E31BCD1}
 		{1378C5EE-C6DF-4CC5-B0B0-482CB4B5F4C2} = {6597FF74-6EAB-4ECC-90E1-408D7D4126D4}
+		{42FAD78A-E07B-4CD1-BA88-DBEDB684F1E3} = {6597FF74-6EAB-4ECC-90E1-408D7D4126D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EEF8DF35-6CF0-43B9-AF8E-02C24FD6E9A8}
