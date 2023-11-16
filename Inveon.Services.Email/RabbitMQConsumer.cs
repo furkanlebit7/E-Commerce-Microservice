@@ -37,7 +37,7 @@ namespace Inveon.Services.Email
                 using (var channel = connection.CreateModel())
                 {
                     //ba�lanaca��m�z kuyru�un ad�n� belirtiyoruz 
-                    channel.QueueDeclare(queue: "checkoutqueue",
+                    channel.QueueDeclare(queue: "emailqueue",
                                        durable: false,
                                        exclusive: false,
                                        autoDelete: false,
@@ -58,7 +58,7 @@ namespace Inveon.Services.Email
 
                     };
 
-                    channel.BasicConsume(queue: "checkoutqueue",
+                    channel.BasicConsume(queue: "emailqueue",
                                      autoAck: true,
                                      consumer: consumer);
 
@@ -70,7 +70,7 @@ namespace Inveon.Services.Email
         public void SendEmail(CheckoutHeaderDto dto)
         {
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("Ecommerce", "devtesterfl7@gmail.com"));
+            message.From.Add(new MailboxAddress("Ecommerce", "noreply.devtest7@gmail.com"));
             message.To.Add(new MailboxAddress($"{dto.FirstName}", $"{dto.Email}"));
             message.Subject = "Order Confirmation";
 
@@ -84,7 +84,7 @@ namespace Inveon.Services.Email
                 client.Connect("smtp.gmail.com", 465, true);
 
                 // Note: only needed if the SMTP server requires authentication
-                client.Authenticate("devtesterfl7@gmail.com", "TesterDevFl7.");
+                client.Authenticate("noreply.devtest7@gmail.com", "vjoezichtxblhpil");
 
                 client.Send(message);
                 client.Disconnect(true);
